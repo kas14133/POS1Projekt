@@ -2,6 +2,7 @@ package at.kast.library.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -28,16 +29,20 @@ public class Buch extends BasePersistable{
     @Column(name = "seitenzahl", nullable = false, length = 255)
     private int seitenzahl;
     
+    @OneToOne
+    private Verleih verleih;
+    
     protected Buch(){
-    	//requireed for JPA
+    	//required for JPA
     }
     
-    public Buch(String titel, String autor, int seitenzahl){
+    public Buch(String titel, String autor, int seitenzahl, Verleih verleih){
     	Ensure.notEmpty("titel", titel);
     	Ensure.notEmpty("autor", autor);
     	this.titel=titel;
     	this.autor=autor;
     	this.seitenzahl=seitenzahl;
+    	this.verleih=verleih;
     }
     
     public String getAutor() {
