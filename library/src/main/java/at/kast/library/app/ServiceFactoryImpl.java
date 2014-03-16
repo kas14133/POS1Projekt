@@ -1,20 +1,28 @@
 package at.kast.library.app;
 
+import java.util.HashMap;
+
 import at.kast.library.repositoryjpa.PersistenceFactory;
 import at.kast.library.service.LibraryManagementService;
 import at.kast.library.service.ServiceFactory;
+import at.kast.library.servicejpa.ServiceJpa;
 
 
 public class ServiceFactoryImpl implements ServiceFactory {
-    private PersistenceFactory persistenceFactory;
+    
+	 private final HashMap<Class<?>, ServiceJpa> services = new HashMap<>();
 
-    public ServiceFactoryImpl(PersistenceFactory persistenceFactory) {
-        this.persistenceFactory = persistenceFactory;
-    }
+	    private PersistenceFactory persistenceFactory;
 
-	@Override
-	public LibraryManagementService timetableManagementService() {
-		// TODO Auto-generated method stub
-		return new LibraryManagementService();
-	}
+	    public ServiceFactoryImpl(PersistenceFactory persistenceFactory) {
+	        this.persistenceFactory = persistenceFactory;
+	    }
+
+	    @Override
+	    public ServiceFactoryImplver timetableManagementService() {
+	        TimetableManagementServiceJpa timetableManagementService = new TimetableManagementServiceJpa();
+	        timetableManagementService.setTeacherJpaRepository(persistenceFactory.teacherJpaRepository());
+	        timetableManagementService.setTeachingUnitJpaRepository(persistenceFactory.teachingUnitJpaRepository());
+	        return timetableManagementService;
+	    }
 }

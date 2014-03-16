@@ -38,7 +38,7 @@ public class Kunde extends BasePersistable{
 		//required for JPA
 	}
 	
-	public Kunde(String name, String addresse, int kundenID, Person person){
+	public Kunde(int kundenID, Person person){
 		this.kundenID=kundenID;
 		this.person=person;
 	}

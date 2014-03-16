@@ -22,5 +22,42 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Alexander/.m2/repository/com/mysema/querydsl/querydsl-jpa/3.3.0/querydsl-jpa-3.3.0.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="com.mysema.querydsl"/>
+			<attribute name="maven.artifactId" value="querydsl-jpa"/>
+			<attribute name="maven.version" value="3.3.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Alexander/.m2/repository/org/springframework/spring-tx/3.2.7.RELEASE/spring-tx-3.2.7.RELEASE.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-tx"/>
+			<attribute name="maven.version" value="3.2.7.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Alexander/.m2/repository/org/springframework/spring-orm/3.2.7.RELEASE/spring-orm-3.2.7.RELEASE.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-orm"/>
+			<attribute name="maven.version" value="3.2.7.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Alexander/.m2/repository/org/springframework/spring-jdbc/3.2.7.RELEASE/spring-jdbc-3.2.7.RELEASE.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.springframework"/>
+			<attribute name="maven.artifactId" value="spring-jdbc"/>
+			<attribute name="maven.version" value="3.2.7.RELEASE"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="/pos"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
