@@ -8,8 +8,6 @@ package at.kast.library.webapp.kunde;
 
 import at.kast.library.webapp.LibraryManagementPage;
 
-import org.apache.wicket.Component;
-
 /**
  *
  */

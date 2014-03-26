@@ -32,34 +32,33 @@ public class PersistenceFactoryImpl implements PersistenceFactory {
         verleihJpaRepository.setEntityManager(entityManager);
         repositories.put(VerleihJpaRepository.class, verleihJpaRepository);
     }
-
 	@Override
-	public PersonJpaRepository personRepository() {
+	public PersonJpaRepository personJpaRepository() {
 		// TODO Auto-generated method stub
-        return (PersonJpaRepository)repositories.get(PersonJpaRepository.class);
+		return null;
 	}
 
 	@Override
-	public AngestellterJpaRepository angestellterRepository() {
+	public AngestellterJpaRepository angestellterJpaRepository() {
 		// TODO Auto-generated method stub
-        return (AngestellterJpaRepository)repositories.get(AngestellterJpaRepository.class);
+		return null;
 	}
 
 	@Override
-	public KundeJpaRepository kundeRepository() {
+	public KundeJpaRepository kundeJpaRepository() {
 		// TODO Auto-generated method stub
-        return (KundeJpaRepository)repositories.get(KundeJpaRepository.class);
+		return null;
 	}
 
 	@Override
-	public BuchJpaRepository buchRepository() {
+	public BuchJpaRepository buchJpaRepository() {
 		// TODO Auto-generated method stub
-        return (BuchJpaRepository)repositories.get(BuchJpaRepository.class);
+		return null;
 	}
 
 	@Override
-	public VerleihJpaRepository subjectRepository() {
+	public VerleihJpaRepository verleihJpaRepository() {
 		// TODO Auto-generated method stub
-        return (VerleihJpaRepository)repositories.get(VerleihJpaRepository.class);
+		return null;
 	}
     }

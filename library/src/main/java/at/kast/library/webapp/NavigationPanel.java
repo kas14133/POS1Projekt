@@ -18,7 +18,7 @@ public class NavigationPanel extends Panel {
         add(new Link("navigateTeacher") {
             @Override
             public void onClick() {
-                setResponsePage(TeacherPage.class);
+                //setResponsePage(TeacherPage.class);
             }
         });
     }

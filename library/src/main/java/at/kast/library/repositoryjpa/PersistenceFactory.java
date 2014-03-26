@@ -2,13 +2,13 @@ package at.kast.library.repositoryjpa;
 
 public interface PersistenceFactory {
 
-    PersonJpaRepository personRepository();
+    PersonJpaRepository personJpaRepository();
 
-    AngestellterJpaRepository angestellterRepository();
+    AngestellterJpaRepository angestellterJpaRepository();
 
-    KundeJpaRepository kundeRepository();
+    KundeJpaRepository kundeJpaRepository();
 
-    BuchJpaRepository buchRepository();
+    BuchJpaRepository buchJpaRepository();
 
-    VerleihJpaRepository subjectRepository();
+    VerleihJpaRepository verleihJpaRepository();
 }

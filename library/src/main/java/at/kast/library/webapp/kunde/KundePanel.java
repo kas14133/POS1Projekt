@@ -6,7 +6,8 @@
  */
 package at.kast.library.webapp.kunde;
 
-import at.grueneis.timetable.webapp.ContentPanel;
+import at.kast.library.webapp.ContentPanel;
+
 
 /**
  *

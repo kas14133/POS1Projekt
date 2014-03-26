@@ -4,7 +4,7 @@
  * Copyright (c) 2014 Joachim Grüneis
  * mailto:grueneis@spengergasse.at
  */
-package aat.kast.library.webapp
+package at.kast.library.webapp;
 
 import org.apache.wicket.markup.html.panel.Panel;
 

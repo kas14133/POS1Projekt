@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import at.kast.library.repositoryjpa.PersistenceFactory;
+import at.kast.library.servicejpa.ServiceJpaFactory;
 
 public class MyApplication {
 

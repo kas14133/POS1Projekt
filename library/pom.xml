@@ -9,6 +9,9 @@
 
   <name>library</name>
   <url>http://maven.apache.org</url>
+  <prerequisites>
+        <maven>3.0.5</maven>
+    </prerequisites>
 	<dependencies>
         <dependency>
             <groupId>commons-collections</groupId>
@@ -190,17 +193,18 @@
         </dependency>
     </dependencies>
 
-<properties>
+ <properties>
         <jdk.version>1.7</jdk.version>
-        <jacoco.version>0.6.3.201306030806</jacoco.version>
+        <jacoco.version>0.6.4.201312101107</jacoco.version>
         <jacoco.ut.execution.data.file>${project.build.directory}/coverage-reports/jacoco-ut.exec
         </jacoco.ut.execution.data.file>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>3.2.7.RELEASE</spring.version>
+        <querydsl.version>3.3.0</querydsl.version>
     </properties>
      <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
@@ -213,6 +217,16 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.6</version>
@@ -221,26 +235,34 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                    <targetJdk>${jdk.version}</targetJdk>
+                    <!-- <excludes> <exclude>**/*Bean.java</exclude> <exclude>**/generated/*.java</exclude>
+                        </excludes> <excludeRoots> <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                        </excludeRoots> -->
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
-                <executions>
-                    <!-- Prepares the property pointing to the JaCoCo runtime agent which
-                        is passed as VM argument when Maven the Surefire plugin is executed. -->
+               <!--  <executions>
                     <execution>
                         <id>pre-unit-test</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <!-- Sets the path to the file which contains the execution data. -->
                             <destFile>${jacoco.ut.execution.data.file}</destFile>
-                            <!-- Sets the name of the property containing the settings for JaCoCo
-                                runtime agent. -->
                             <propertyName>surefireArgLine</propertyName>
                         </configuration>
                     </execution>
-                </executions>
+                </executions> -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -265,7 +287,7 @@
                 <groupId>com.mysema.maven</groupId>
                 <artifactId>maven-apt-plugin</artifactId>
                 <version>1.0.4</version>
-                <executions>
+                <!-- <executions>
                     <execution>
                         <goals>
                             <goal>process</goal>
@@ -275,8 +297,15 @@
                             <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
                         </configuration>
                     </execution>
-                </executions>
+                </executions> -->
             </plugin>
         </plugins>
+        
     </build>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <url>http://repo.springsource.org/libs-milestone/</url>
+        </repository>
+    </repositories>
 </project>

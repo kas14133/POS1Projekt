@@ -20,16 +20,17 @@ public class BuchRepositoryImpl implements BuchRepositoryCustom{
 	 @PersistenceContext
 	    EntityManager entityManager;
 
-	    @Override
+	 @Override
 	    public List<Buch> findWithQueryDsl(String building) {
-	        JPAQuery query = new JPAQuery(entityManager);
+			return null;
+		 /*JPAQuery query = new JPAQuery(entityManager);
 	        QBuch buch = QBuch.buch;
 
 	        query.from(buch).
 	                where(buch.building.eq(building)).
 	                orderBy(buch.name.asc());
 
-	        return query.list(buch);
+	        return query.list(buch);*/
 	    }
 
 	    @Override
@@ -52,4 +53,5 @@ public class BuchRepositoryImpl implements BuchRepositoryCustom{
 	                createQuery(query.select(buch)).
 	                getResultList();
 	    }
+
 }

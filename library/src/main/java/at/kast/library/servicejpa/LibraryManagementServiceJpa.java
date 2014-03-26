@@ -2,6 +2,9 @@ package at.kast.library.servicejpa;
 
 import java.util.Date;
 
+import at.kast.library.domain.Person;
+import at.kast.library.repositoryjpa.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,24 +13,24 @@ import org.springframework.stereotype.Service;
 public class LibraryManagementServiceJpa implements ServiceJpa {
 
     @Autowired
-    private personJpaRepository PersonJpaRepository;
+    private PersonJpaRepository personJpaRepository;
 
     @Autowired
-    private TeachingUnitJpaRepository teachingUnitJpaRepository;
+    private VerleihJpaRepository verleihJpaRepository;
 
-    public void createNewTeacher(String name) {
+    public void createNewTeacher(String name, int alter, String addresse, String email) {
         // start transaction
         // write audit log
-        Teacher teacher = new Teacher(name, new Date());
-        teacherJpaRepository.persist(teacher);
+        Person person = new Person(name,alter,addresse,email);
+        personJpaRepository.persist(person);
         // end (commit) transaction
     }
 
-    public void setTeacherJpaRepository(TeacherJpaRepository teacherJpaRepository) {
-        this.teacherJpaRepository = teacherJpaRepository;
+    public void setPersonJpaRepository(PersonJpaRepository personJpaRepository) {
+        this.personJpaRepository = personJpaRepository;
     }
 
-    public void setTeachingUnitJpaRepository(TeachingUnitJpaRepository teachingUnitJpaRepository) {
-        this.teachingUnitJpaRepository = teachingUnitJpaRepository;
+    public void setVerleihJpaRepository(VerleihJpaRepository verleihJpaRepository) {
+        this.verleihJpaRepository = verleihJpaRepository;
     }
 }
